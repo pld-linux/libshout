@@ -1,13 +1,13 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl):	Biblioteka ¼róde³ strumieni icecast
 Name:		libshout
-Version:	2.0
+Version:	2.1
 Release:	1
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
-Source0:	http://www.icecast.org/files/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	627f3eede05b2237bee1369e4a95143c
+Source0:	http://downloads.xiph.org/releases/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	ca6e98af87fd17c709821d9be82b37d5
 #Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf
@@ -69,9 +69,12 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+cp -rf examples/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -86,12 +89,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/* examples/example.c
+%doc doc/* 
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/pkgconfig/shout.pc
 %{_datadir}/aclocal/shout.m4
 %{_libdir}/lib*.la
 %{_includedir}/shout
+%{_examplesdir}/*
 
 %files static
 %defattr(644,root,root,755)
