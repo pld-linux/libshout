@@ -8,13 +8,14 @@ Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
 # Source0-md5:	ca6e98af87fd17c709821d9be82b37d5
-#Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libogg-devel
+BuildRequires:	libtheora-devel
 BuildRequires:	libvorbis-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,6 +33,9 @@ Summary:	Icecast source streaming library development package
 Summary(pl):	Pakiet dla programistów u¿ywaj±cych libshout
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libogg-devel
+Requires:	libtheora-devel
+Requires:	libvorbis-devel
 
 %description devel
 The libshout-devel package contains the header files needed for
