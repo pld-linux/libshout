@@ -7,6 +7,7 @@ License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
 Source0:	ftp://ftp.icecast.org/pub/libshout/%{name}-%{version}.tar.gz
+# Source0-md5:	f0acb01c1ee60366b46b622ecda229f3
 Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf
