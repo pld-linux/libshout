@@ -6,7 +6,7 @@ Release:	1
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
-Source0:	http://downloads.xiph.org/releases/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
 # Source0-md5:	ca6e98af87fd17c709821d9be82b37d5
 #Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
@@ -31,7 +31,7 @@ dotarciu wiêkszo¶ci z³ych danych do serwera icecast.
 Summary:	Icecast source streaming library development package
 Summary(pl):	Pakiet dla programistów u¿ywaj±cych libshout
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 The libshout-devel package contains the header files needed for
@@ -46,7 +46,7 @@ wysy³aj±cych dane do serwera icecast.
 Summary:	Icecast source streaming static library
 Summary(pl):	Statyczna biblioteka libshout
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Icecast source streaming static library.
@@ -56,10 +56,8 @@ Statyczna biblioteka libshout - ¼róde³ strumieni icecast.
 
 %prep
 %setup -q
-#\%patch -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
@@ -91,11 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/* 
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/pkgconfig/shout.pc
-%{_datadir}/aclocal/shout.m4
 %{_libdir}/lib*.la
 %{_includedir}/shout
-%{_examplesdir}/*
+%{_pkgconfigdir}/shout.pc
+%{_aclocaldir}/shout.m4
+%{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
