@@ -6,13 +6,6 @@ Release:	2
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.icecast.org/pub/libshout/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
@@ -35,13 +28,6 @@ dotarciu wiЙkszo╤ci zЁych danych do serwera icecast.
 Summary:	Icecast source streaming library development package
 Summary(pl):	Pakiet dla programistСw u©ywaj╠cych libshout
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -57,13 +43,6 @@ wysyЁaj╠cych dane do serwera icecast.
 Summary:	Icecast source streaming static library
 Summary(pl):	Statyczna biblioteka libshout
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
