@@ -71,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS CHANGES README
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
 
 %post   -p /sbin/ldconfig
