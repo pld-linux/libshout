@@ -57,7 +57,7 @@ Statyczna biblioteka libshout - ¼róde³ strumieni icecast.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
