@@ -1,14 +1,14 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl):	Biblioteka ¼róde³ strumieni icecast
 Name:		libshout
-Version:	1.0.5
-Release:	2
+Version:	2.0
+Release:	1
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
-Source0:	ftp://ftp.icecast.org/pub/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	f0acb01c1ee60366b46b622ecda229f3
-Patch0:		%{name}-ac_am_fixes.patch
+Source0:	http://www.icecast.org/files/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	627f3eede05b2237bee1369e4a95143c
+#Patch0:		%{name}-ac_am_fixes.patch
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -54,12 +54,12 @@ Statyczna biblioteka libshout - ¼róde³ strumieni icecast.
 
 %prep
 %setup -q
-%patch -p1
+#\%patch -p1
 
 %build
 rm -f missing
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 %configure
@@ -79,13 +79,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CHANGES README
+%doc README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/*.{html,css}
+%doc doc/* examples/example.c
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/pkgconfig/shout.pc
+%{_datadir}/aclocal/shout.m4
 %{_libdir}/lib*.la
 %{_includedir}/shout
 
