@@ -1,13 +1,14 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl):	Biblioteka ¼róde³ strumieni icecast
 Name:		libshout
-Version:	2.1
+Version:	2.2
 Release:	1
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	ca6e98af87fd17c709821d9be82b37d5
+# Source0-md5:	d5b273a072785ee14a85ff76f66850aa
+Patch0:		%{name}-link.patch
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -16,6 +17,7 @@ BuildRequires:	libogg-devel
 BuildRequires:	libtheora-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	pkgconfig
+BuildRequires:	speex-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,6 +38,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	libogg-devel
 Requires:	libtheora-devel
 Requires:	libvorbis-devel
+Requires:	speex-devel
 
 %description devel
 The libshout-devel package contains the header files needed for
@@ -60,11 +63,13 @@ Statyczna biblioteka libshout - ¼róde³ strumieni icecast.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
