@@ -2,7 +2,7 @@ Summary:	libshout - icecast source streaming library
 Summary(pl):	Biblioteka ¼róde³ strumieni icecast
 Name:		libshout
 Version:	2.2
-Release:	1
+Release:	2
 License:	LGPL
 Vendor:		Icecast <team@icecast.org>
 Group:		Libraries
