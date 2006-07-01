@@ -1,8 +1,0 @@
---- libshout-2.2.1/include/shout/Makefile.am.orig	2006-04-13 22:48:41.000000000 +0200
-+++ libshout-2.2.1/include/shout/Makefile.am	2006-05-13 13:40:16.373737000 +0200
-@@ -3,4 +3,4 @@
- AUTOMAKE_OPTIONS = foreign
- 
- pkgincludedir = $(includedir)/shout
--nodist_include_HEADERS = shout.h
-+nodist_pkginclude_HEADERS = shout.h
