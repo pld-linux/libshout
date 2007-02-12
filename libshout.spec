@@ -1,5 +1,5 @@
 Summary:	libshout - icecast source streaming library
-Summary(pl):	Biblioteka ºrÛde≥ strumieni icecast
+Summary(pl.UTF-8):   Biblioteka ≈∫r√≥de≈Ç strumieni icecast
 Name:		libshout
 Version:	2.2.2
 Release:	1
@@ -24,14 +24,14 @@ Libshout is a library for communicating with and sending data to an
 icecast server. It handles the socket connection, the timing of the
 data, and prevents most bad data from getting to the icecast server.
 
-%description -l pl
-libshout to biblioteka do komunikowania siÍ z i wysy≥ania danych do
-serwera icecast. Obs≥uguje po≥±czenia, czasy danych i zapobiega
-dotarciu wiÍkszo∂ci z≥ych danych do serwera icecast.
+%description -l pl.UTF-8
+libshout to biblioteka do komunikowania siƒô z i wysy≈Çania danych do
+serwera icecast. Obs≈Çuguje po≈ÇƒÖczenia, czasy danych i zapobiega
+dotarciu wiƒôkszo≈õci z≈Çych danych do serwera icecast.
 
 %package devel
 Summary:	Icecast source streaming library development package
-Summary(pl):	Pakiet dla programistÛw uøywaj±cych libshout
+Summary(pl.UTF-8):   Pakiet dla programist√≥w u≈ºywajƒÖcych libshout
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libogg-devel
@@ -44,21 +44,21 @@ The libshout-devel package contains the header files needed for
 developing applications that send data to an icecast server. Install
 libshout-devel if you want to develop applications using libshout.
 
-%description devel -l pl
-Ten pakiet zawiera pliki nag≥Ûwkowe potrzebne do tworzenia aplikacji
-wysy≥aj±cych dane do serwera icecast.
+%description devel -l pl.UTF-8
+Ten pakiet zawiera pliki nag≈Ç√≥wkowe potrzebne do tworzenia aplikacji
+wysy≈ÇajƒÖcych dane do serwera icecast.
 
 %package static
 Summary:	Icecast source streaming static library
-Summary(pl):	Statyczna biblioteka libshout
+Summary(pl.UTF-8):   Statyczna biblioteka libshout
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Icecast source streaming static library.
 
-%description static -l pl
-Statyczna biblioteka libshout - ºrÛde≥ strumieni icecast.
+%description static -l pl.UTF-8
+Statyczna biblioteka libshout - ≈∫r√≥de≈Ç strumieni icecast.
 
 %prep
 %setup -q
