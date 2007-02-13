@@ -1,5 +1,5 @@
 Summary:	libshout - icecast source streaming library
-Summary(pl.UTF-8):   Biblioteka źródeł strumieni icecast
+Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
 Version:	2.2.2
 Release:	1
@@ -31,7 +31,7 @@ dotarciu większości złych danych do serwera icecast.
 
 %package devel
 Summary:	Icecast source streaming library development package
-Summary(pl.UTF-8):   Pakiet dla programistów używających libshout
+Summary(pl.UTF-8):	Pakiet dla programistów używających libshout
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libogg-devel
@@ -50,7 +50,7 @@ wysyłających dane do serwera icecast.
 
 %package static
 Summary:	Icecast source streaming static library
-Summary(pl.UTF-8):   Statyczna biblioteka libshout
+Summary(pl.UTF-8):	Statyczna biblioteka libshout
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
