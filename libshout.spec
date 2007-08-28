@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static libraries
+#
 Summary:	libshout - icecast source streaming library
 Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
@@ -70,7 +74,8 @@ Statyczna biblioteka libshout - źródeł strumieni icecast.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -103,6 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_aclocaldir}/shout.m4
 %{_examplesdir}/%{name}-%{version}
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
- %{_libdir}/lib*.a
+%{_libdir}/lib*.a
+%endif
