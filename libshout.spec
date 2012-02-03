@@ -5,13 +5,12 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
-Version:	2.2.2
+Version:	2.3.0
 Release:	1
-License:	LGPL
+License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	4f75fc9901c724b712c371c9a1e782d3
-Patch0:		%{name}-link.patch
+# Source0-md5:	976a5979505f3de4026ae7fffb10754b
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -66,7 +65,6 @@ Statyczna biblioteka libshout - źródeł strumieni icecast.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -95,14 +93,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc NEWS README
+%attr(755,root,root) %{_libdir}/libshout.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libshout.so.3
 
 %files devel
 %defattr(644,root,root,755)
 %doc doc/* 
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libshout.so
+%{_libdir}/libshout.la
 %{_includedir}/shout
 %{_pkgconfigdir}/shout.pc
 %{_aclocaldir}/shout.m4
@@ -111,5 +110,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libshout.a
 %endif
