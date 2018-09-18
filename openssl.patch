@@ -1,0 +1,14 @@
+--- libshout-2.4.1/src/tls.c~	2015-06-18 06:27:45.000000000 +0200
++++ libshout-2.4.1/src/tls.c	2018-09-18 13:11:18.634717702 +0200
+@@ -65,7 +65,11 @@ static inline int tls_setup(shout_tls_t
+ 
+ 	SSL_library_init();
+ 	SSL_load_error_strings();
++#if OPENSSL_VERSION_NUMBER < 0x10100000
+ 	SSLeay_add_all_algorithms();
++#else
++	OpenSSL_add_all_algorithms();;
++#endif
+  	SSLeay_add_ssl_algorithms();
+ 
+ 	meth = TLSv1_client_method();
