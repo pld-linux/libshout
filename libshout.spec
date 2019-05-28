@@ -5,12 +5,12 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
-Version:	2.4.1
-Release:	4
+Version:	2.4.2
+Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	89cebf8cb0197f639cde69c95177fe47
+Source0:	https://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
+# Source0-md5:	b7a33377d716a95c9159f0922d04e596
 Patch0:		openssl.patch
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf >= 2.54
@@ -85,6 +85,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# ckport support is not maintained in PLD
+%{__rm} -r $RPM_BUILD_ROOT%{_libdir}/ckport
 
 cp -rf examples/*.c $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
