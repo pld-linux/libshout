@@ -5,13 +5,12 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
-Version:	2.4.2
+Version:	2.4.3
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	b7a33377d716a95c9159f0922d04e596
-Patch0:		openssl.patch
+# Source0-md5:	2623ebf5bdf00517d2a7fd17d70c31aa
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -67,7 +66,6 @@ Statyczna biblioteka libshout - źródeł strumieni icecast.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}
