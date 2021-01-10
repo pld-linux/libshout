@@ -5,12 +5,12 @@
 Summary:	libshout - icecast source streaming library
 Summary(pl.UTF-8):	Biblioteka źródeł strumieni icecast
 Name:		libshout
-Version:	2.4.4
+Version:	2.4.5
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	https://downloads.xiph.org/releases/libshout/%{name}-%{version}.tar.gz
-# Source0-md5:	f8788ea09e03a57e91a9942913d13aa6
+# Source0-md5:	f77083cf790386297d86536b76a88b1c
 URL:		http://www.icecast.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -84,6 +84,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libshout.la
 # ckport support is not maintained in PLD
 %{__rm} -r $RPM_BUILD_ROOT%{_libdir}/ckport
 
@@ -98,14 +100,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
+%attr(755,root,root) %{_bindir}/shout
 %attr(755,root,root) %{_libdir}/libshout.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libshout.so.3
+%{_mandir}/man1/shout.1*
 
 %files devel
 %defattr(644,root,root,755)
-%doc doc/* 
+%doc doc/libshout.xml
 %attr(755,root,root) %{_libdir}/libshout.so
-%{_libdir}/libshout.la
 %{_includedir}/shout
 %{_pkgconfigdir}/shout.pc
 %{_aclocaldir}/shout.m4
